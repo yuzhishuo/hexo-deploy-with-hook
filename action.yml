@@ -1,6 +1,6 @@
 name: 'Hexo Deploy'
 description: 'This GitHub action will handle the building and deploying process of hexo project.'
-author: 'y4code'
+author: 'renzhaosy'
 runs:
   using: 'docker'
   image: 'Dockerfile'
