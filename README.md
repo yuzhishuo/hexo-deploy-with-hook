@@ -1,3 +1,45 @@
+# DEPRECATED
+I no longer use Hexo nor this action.  
+Please use hexo's suggested/recommended way to deploy to github pages.  
+https://hexo.io/docs/github-pages.html  
+
+Remove this action from your repo `.github/workflows/deploy.yml`  
+Add a new action `.github/workflows/pages.yml` and put the following content on the new file.  
+```
+name: Pages
+
+on:
+  push:
+    branches:
+      - master # default branch
+
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.HEXO_TOKEN }}
+          publish_dir: ./public
+```
+  
 # Hexo Deploy Action
 
 
