@@ -1,4 +1,4 @@
-name: 'Hexo Deploy'
+name: 'hexo deploy with-hook'
 description: 'This GitHub action will handle the building and deploying process of hexo project.'
 author: 'renzhaosy'
 runs:
