@@ -42,6 +42,11 @@ npm install
 echo "Clean folder ..."
 ./node_modules/hexo/bin/hexo clean
 
+if [ -n "${PREHOOK}" ]; then
+    echo "run pre hook ..."
+    /bin/bash ${PREHOOK}
+fi
+
 echo "Generate file ..."
 ./node_modules/hexo/bin/hexo generate
 
