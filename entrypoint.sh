@@ -45,6 +45,11 @@ echo "Clean folder ..."
 echo "Generate file ..."
 ./node_modules/hexo/bin/hexo generate
 
+if [ -n "${HOOK}" ]; then
+    echo "run hook ..."
+    /bin/bash ${HOOK}
+fi
+
 echo "copy CNAME if exists"
 if [ -n "${CNAME}" ]; then
     echo $CNAME > ${PUBLISH_DIR}/CNAME
