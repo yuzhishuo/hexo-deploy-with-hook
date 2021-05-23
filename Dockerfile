@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM stig124/slidev:0.9.6
+FROM node:14-alpine
 
 LABEL "com.github.actions.name"="Hexo Deploy"
 LABEL "com.github.actions.description"="This GitHub action will handle the building and deploying process of hexo project."
