@@ -44,7 +44,7 @@ echo "Clean folder ..."
 
 if [ -n "${PREHOOK}" ]; then
     echo "run pre hook ..."
-    /bin/bash ${PREHOOK}
+    bash ${PREHOOK}
 fi
 
 echo "Generate file ..."
@@ -52,7 +52,7 @@ echo "Generate file ..."
 
 if [ -n "${HOOK}" ]; then
     echo "run hook ..."
-    /bin/bash ${HOOK}
+    bash ${HOOK}
 fi
 
 echo "copy CNAME if exists"
