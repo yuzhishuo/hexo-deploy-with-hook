@@ -36,19 +36,19 @@ echo "Deploy to ${PRO_REPOSITORY}"
 cd $GITHUB_WORKSPACE 
 
 echo "npm install ..." 
-npm install
+yarn install
 
 
-echo "Clean folder ..."
-./node_modules/hexo/bin/hexo clean
+# echo "Clean folder ..."
+#./node_modules/hexo/bin/hexo clean
 
 if [ -n "${PREHOOK}" ]; then
     echo "run pre hook ..."
     /bin/bash ${PREHOOK}
 fi
 
-echo "Generate file ..."
-./node_modules/hexo/bin/hexo generate
+# echo "Generate file ..."
+# ./node_modules/hexo/bin/hexo generate
 
 if [ -n "${HOOK}" ]; then
     echo "run hook ..."
